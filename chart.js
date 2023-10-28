@@ -1,13 +1,32 @@
-// Bar chart
-new Chart(document.getElementById("bar-chart"), {
-  type: 'horizontalBar',
+
+//first fetch api
+const key = "51de08d7fc9bfbc15136270d5738855f";
+const header = {
+  'Content-Type': 'application/json'
+};
+const url = `https://api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=${key}`;
+console.log(url);
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then(data => {   
+    const datetime = data.list.map(item => item.dt_txt);
+    const windSpeed = data.list.map(item => item.wind.speed);
+
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
   data: {
-    labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    labels: datetime,
     datasets: [
       {
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
+        label: "Wind Speed",
+        fill: false,
+        data: windSpeed
       }
     ]
   },
@@ -15,7 +34,15 @@ new Chart(document.getElementById("bar-chart"), {
     legend: { display: false },
     title: {
       display: true,
-      text: 'Predicted world population (millions) in 2050'
+      text: 'Wind Speed'
     }
   }
 });
+
+
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
+
+// Create chart
