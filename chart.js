@@ -18,14 +18,15 @@ fetch(url)
     const datetime = data.list.map(item => item.dt_txt);
     const windSpeed = data.list.map(item => item.wind.speed);
 
-new Chart(document.getElementById("line-chart"), {
+new Chart(document.getElementById("windspeed-chart"), {
   type: 'line',
   data: {
     labels: datetime,
     datasets: [
       {
         label: "Wind Speed",
-        fill: false,
+        fill: true,
+        borderColor: "#4169e1",
         data: windSpeed
       }
     ]
@@ -35,6 +36,28 @@ new Chart(document.getElementById("line-chart"), {
     title: {
       display: true,
       text: 'Wind Speed'
+    }
+  }
+});
+
+new Chart(document.getElementById("waveheight-chart"), {
+  type: 'line',
+  data: {
+    labels: datetime,
+    datasets: [
+      {
+        label: "Wave Height (ft)",
+        fill: true,
+        borderColor: "#4169e1",
+        data: windSpeed
+      }
+    ]
+  },
+  options: {
+    legend: { display: false },
+    title: {
+      display: true,
+      text: 'Wave Height (ft)'
     }
   }
 });

@@ -22,11 +22,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="ratings.html">Ratings</a>
+          <a class="nav-link" href="main.html">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="ratings.html">Ratings <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="About.html">About Us</a>
@@ -35,21 +35,15 @@
     </div>
   </nav>
 
-  <h1>Surf Forecast</h1>
+  <h1>Ratings</h1>
   
-  <div class="charts">
-
-  <h2 class="charts-heading">Forecast Models</h2>
-
-  <div class="chart">
-  <canvas id="windspeed-chart" width="800" height="100"></canvas>
+  <div class="ratings">
+    <div class="ratings-container">
+        <h2> Ratings module </h2>
+        <p>This module will be used to record user based surf ratings for a given time period. </p>
+    </div>
   </div>
 
-  <div class="chart">
-  <canvas id="waveheight-chart" width="800" height="100"></canvas>
-  </div>
-
-</div>
 <!-- Chart JS -->  
 <script src="chart.js"></script>
 
