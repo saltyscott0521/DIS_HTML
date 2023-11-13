@@ -24,7 +24,7 @@ new Chart(document.getElementById("windspeed-chart"), {
     labels: datetime,
     datasets: [
       {
-        label: "Wind Speed",
+        label: "Wind Speed (mph)",
         fill: true,
         borderColor: "#4169e1",
         data: windSpeed
@@ -35,7 +35,7 @@ new Chart(document.getElementById("windspeed-chart"), {
     legend: { display: false },
     title: {
       display: true,
-      text: 'Wind Speed'
+      text: 'Wind Speed (mph)'
     }
   }
 });
