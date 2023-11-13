@@ -107,6 +107,13 @@ img {
     border-radius: 10px;
 }
 
+.dropdown{
+    text-align: left;
+    transition: background 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+.dropdown:hover {
+    transform: translateY(-2px); /* Move up by 5 pixels on hover */
+}
 .chart-section-title {
     color: #829298; /* Sea Blue */
     text-align: center;
